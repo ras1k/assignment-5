@@ -1,0 +1,10 @@
+.link-button{
+    text-decoration: none;
+    background-color: #59A5FF;
+    color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 5px;
+}
