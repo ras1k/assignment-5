@@ -14,7 +14,7 @@
     <body>
         <div class="container row ">
             <div class="container col col-lg-6 col-sm-12 ps-4"> 
-                <img class="ps-3 w-100" src="images/monet.jpg" alt="">
+                <img class="ps-3 mb-3 w-100" src="images/monet.jpg" alt="">
             </div>
             <div class="container col col-lg-6 col-sm-12 bg-success bg-opacity-10"> 
                 <div>
@@ -25,7 +25,7 @@
                                 <p>Income :</p>
                             </div>
                             <div class=" col-lg-3">
-                                <input id="income-input" class="bg-secondary rounded bg-opacity-25" type="text" name="" id="">
+                                <input id="income-input" class="bg-secondary rounded bg-opacity-25" type="number" name="" placeholder="income amount">
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                                 <p>Food :</p>
                             </div>
                             <div class=" col-lg-3">
-                                <input id="food-input" class="bg-secondary rounded bg-opacity-25" type="text" name="" id="">
+                                <input id="food-input" class="bg-secondary rounded bg-opacity-25" type="number" name="" placeholder="food cost">
                             </div>
                         </div>
                         <div class="row mx-5">
@@ -45,7 +45,7 @@
                                 <p>Rent :</p>
                             </div>
                             <div class=" col-lg-3">
-                                <input id="rent-input" class="bg-secondary rounded bg-opacity-25" type="text" name="" id="">
+                                <input id="rent-input" class="bg-secondary rounded bg-opacity-25" type="number" name="" placeholder="rent cost">
                             </div>
                         </div>
                         <div class="row mx-5">
@@ -53,15 +53,30 @@
                                 <p>Clothes :</p>
                             </div>
                             <div class=" col-lg-3">
-                                <input itemid="cloth-input" class="bg-secondary rounded bg-opacity-25" type="text" name="" id="">
+                                <input id="cloth-input" class="bg-secondary rounded bg-opacity-25" type="number" name="" placeholder="clothes cost">
                             </div>
                         </div>
                     </div>
                     <div class="text-center">
                         <Button id="calculate-button" class="link-button">Calculate</Button>
                     </div>
-                    <div class="text-center m-4"> <h5> Total Expense : 000 </h5></div>
-                    <div class="text-center m-4"> <h5> Balance : 000 </h5> </div>
+                    <div id="" class="text-center m-4"> <h5> Total Expense : <span id="total-expense">000</span></h5></div>
+                    <div id="" class="text-center m-4"> <h5> Balance : <span id="balance">000</span></h5> </div>
+
+                    <div class="row mx-5">
+                        <div class="col-lg-3">
+                            <h6>save</h6>
+                        </div>
+                        <div class="text-center col-lg-6">
+                            <input id="savings-input" class="bg-secondary rounded bg-opacity-25" type="number" name="" placeholder="savings">
+                        </div>
+                        <div class="col-lg-3">
+                            %
+                        </div>
+                        <div class="text-center ">
+                            <button class="mt-3 link-button">Save</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
