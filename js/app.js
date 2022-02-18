@@ -1,47 +1,65 @@
-document.getElementById('calculate-button').addEventListener('click', function(){
-   //income input
-    const incomeInput = document.getElementById('income-input');
-    const newIncomeText = incomeInput.value;
-    const newIncome = parseInt (newIncomeText);
-    // console.log(newIncome);
+function getInputValue(inputId){
+    const inputField = document.getElementById(inputId);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
 
-    //Expenses input
+    //error text/////////
+    if (amountValue < 0){
+        alert('Entered number cannot be negative');
+    }
+    //clear input field
+    //inputField.value = '';
+        return amountValue;
+}
 
-    //food
-    const foodInput = document.getElementById('food-input');
-    const newFoodText = foodInput.value;
-    const newFood = parseInt(newFoodText);
+document.getElementById('calculate-button').addEventListener('click',function(){
 
-    //rent
-    const rentInput = document.getElementById('rent-input');
-    const newRentText = rentInput.value;
-    const newRent = parseInt(newRentText);
+    const foodInput = getInputValue('food-input');
+    const rentInput = getInputValue('rent-input');
+    const clothInput = getInputValue('cloth-input');
+    let incomeInput = getInputValue('income-input');//inputfield
 
-    //clothes
-    const clothInput = document.getElementById('cloth-input');
-    const newClothText = clothInput.value;
-    const newCloth = parseInt(newClothText);
-
-    //total amount
     const totalExpense = document.getElementById('total-expense');
     const previousExpenseText = totalExpense.innerText;
     const previousTotalExpense = parseInt(previousExpenseText);
-    const totalCost = newFood + newRent + newCloth;
-    const newTotalExpense = previousTotalExpense + totalCost;
-    totalExpense.innerText = newTotalExpense;
+    const totalCost = previousTotalExpense + foodInput + rentInput + clothInput;
+    totalExpense.innerText = totalCost;
 
-    //balance input
-    const balance = document.getElementById('balance');
+   //error text
+   ////////////////////////////
+   if(totalCost > incomeInput){
+       alert ('your cost is higher than your income');
+   }
+
+   //balance input///////
+    let balance = document.getElementById('balance');
     const previousBlanceText = balance.innerText;
     const previousBalance = parseInt(previousBlanceText);
-    const remainingBalance = newIncome - totalCost;
-    const newBalance = previousBalance + remainingBalance;
-    balance.innerText = newBalance;
+    let remainingBalance = previousBalance + (incomeInput - totalCost);
 
-    //remove input values
-    foodInput.value = '';
-    rentInput.value = '';
-    clothInput.value = '';
-    incomeInput.value = '';
+    // const newBalance = previousBalance + remainingBalance;
+    /////////////////////////////////////
+    balance.innerText = remainingBalance;
+}); 
+
+document.getElementById('savings-button').addEventListener('click',function(){
+    const totalSave = document.getElementById('savings-amount');
+    const previousSaveText = totalSave.innerText;
+    const previousTotalSave = parseInt(previousSaveText);
+    let incomeInput2 = getInputValue('income-input');
+    const saveInput = getInputValue('savings-input');//inputfield
+    const saveCalculate = previousTotalSave+(incomeInput2 * saveInput)/100;
+    totalSave.innerText = saveCalculate;
     
+    // if(saveCalculate > remainingBalance){
+    //     alert ('saving limit exceeded');
+    // }
+    //
+
+    debugger;
+    const totalBalance = document.getElementById('remaining-balance');
+    const previousBalanceText = totalBalance.innerText;
+    const previousTotalSave1 = parseInt(previousBalanceText);
+    const remBalance = parseInt(balance.innerText) - saveCalculate ;
+    totalBalance.innerText = remBalance
 });

@@ -1,7 +1,10 @@
+/*--------------
+   button style
+---------------- */
 
 .link-button{
     text-decoration: none;
-    background-color: #59A5FF;
+    background-color:darkslategrey;
     color: white;
     font-weight: 500;
     padding: 5px 10px;
